@@ -41,9 +41,10 @@ document.querySelector(".nav-links").addEventListener("click", function (e) {
   if (e.target.classList.contains("nav-link")) {
     const id = e.target.getAttribute("href");
 
-    console.log(id);
+    const offsetTop = document.querySelector(`.${id}`).offsetTop;
 
-    document.querySelector(`.${id}`).scrollIntoView({ behavior: "smooth" });
+    scroll({ top: offsetTop, behavior: "smooth" });
+    // document.querySelector(`.${id}`).scrollIntoView({ behavior: "smooth" });
   }
 });
 
