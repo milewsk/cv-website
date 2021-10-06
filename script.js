@@ -1,10 +1,11 @@
 "use strict";
 
-// STICKY NAV
+//SELECTORS
 
 const header = document.querySelector("header");
-
 const navigation = document.querySelector(".nav");
+
+// STICKY NAV
 
 const headerObsCallback = function (entries, observer) {
   const entry = entries[0];
@@ -50,19 +51,29 @@ document.querySelector(".nav-links").addEventListener("click", function (e) {
 
 // Opacity nav
 const opacityHnadler = function (e, opacity) {
-  e.preventDefault();
+  // logic
+  // sprawdzenie czy jest to nasz link
+  if (e.target.classList.contains("nav-link")) {
+    e.preventDefault();
 
-  const link = e.target;
-  console.log(link);
+    const link = e.target;
+    const siblings = link.closest(".nav").querySelectorAll(".nav-link");
 
-  const siblings = link.closest();
-  // if(){}
+    // dla każdego elementu innego niż element nasłuchiwany wykonaj przysłonę
+
+    siblings.forEach((element) => {
+      if (link !== element) {
+        element.style.opacity = opacity;
+      }
+    });
+  }
 };
 
 // Mouse over
 navigation.addEventListener("mouseover", function (e) {
-  opacityHnadler(e, 0.7);
+  opacityHnadler(e, 0.5);
 });
+
 // Mouse out
 navigation.addEventListener("mouseout", function (e) {
   opacityHnadler(e, 1);
@@ -71,7 +82,6 @@ navigation.addEventListener("mouseout", function (e) {
 // Viewport on mobile
 
 let vh = window.innerHeight * 0.01;
-
 document.documentElement.style.setProperty("--vh", `${vh}px`);
 
 window.addEventListener("resize", () => {
