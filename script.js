@@ -46,3 +46,34 @@ document.querySelector(".nav-links").addEventListener("click", function (e) {
     document.querySelector(`.${id}`).scrollIntoView({ behavior: "smooth" });
   }
 });
+
+// Opacity nav
+const opacityHnadler = function (e, opacity) {
+  e.preventDefault();
+
+  const link = e.target;
+  console.log(link);
+
+  const siblings = link.closest();
+  // if(){}
+};
+
+// Mouse over
+navigation.addEventListener("mouseover", function (e) {
+  opacityHnadler(e, 0.7);
+});
+// Mouse out
+navigation.addEventListener("mouseout", function (e) {
+  opacityHnadler(e, 1);
+});
+
+// Viewport on mobile
+
+let vh = window.innerHeight * 0.01;
+
+document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+window.addEventListener("resize", () => {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
+});
