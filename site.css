@@ -170,6 +170,33 @@ header {
   background-color: yellowgreen;
 }
 
+/* scroll up button */
+.scroll-up--button {
+  position: fixed;
+  top: 88%;
+  left: 78%;
+
+  z-index: 120;
+  transition: all 0.4s;
+
+  width: 8vh;
+  height: 8vh;
+  padding: 1rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--color-primary-nav);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+}
+
+svg image {
+  width: 100%;
+  height: 100%;
+}
+
 /* section content */
 
 /* Tablet / laptop */

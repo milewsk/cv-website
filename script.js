@@ -5,6 +5,8 @@
 const header = document.querySelector("header");
 const navigation = document.querySelector(".nav");
 
+const buttonScrollTop = document.querySelector(".scroll-up--button");
+
 // STICKY NAV
 
 const headerObsCallback = function (entries, observer) {
@@ -14,8 +16,16 @@ const headerObsCallback = function (entries, observer) {
   //   logika
   if (!entry.isIntersecting) {
     navigation.classList.add("sticky");
+
+    buttonScrollTop.style.opacity = 0.8;
+
+    // dodać wyświetlanie się buttona
   } else {
     navigation.classList.remove("sticky");
+
+    buttonScrollTop.style.opacity = 0;
+
+    // usuwanie buttona
   }
 };
 
@@ -87,4 +97,11 @@ document.documentElement.style.setProperty("--vh", `${vh}px`);
 window.addEventListener("resize", () => {
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
+});
+
+// button Scroll up
+
+buttonScrollTop.addEventListener("click", () => {
+  console.log("hi");
+  document.querySelector("header").scrollIntoView(true);
 });
