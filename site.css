@@ -24,7 +24,7 @@ body {
 /* MOBILE FIRST */
 
 .page {
-  width: 100vw;
+  width: calc(var(--vw, 1vw) * 100);
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
