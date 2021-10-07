@@ -17,7 +17,7 @@ const headerObsCallback = function (entries, observer) {
   if (!entry.isIntersecting) {
     navigation.classList.add("sticky");
 
-    buttonScrollTop.style.opacity = 0.8;
+    buttonScrollTop.style.opacity = 1;
 
     // dodać wyświetlanie się buttona
   } else {
@@ -42,6 +42,28 @@ const headerObserver = new IntersectionObserver(
 
 headerObserver.observe(header);
 
+// Obverver dla view port
+
+// const windowObsCallback = function (entries, observer) {
+//   const entry = entries[0];
+
+//   console.log(entry);
+//   if (entry.isIntersecting && window.innerWidth > window.innerHeight) {
+//     let temp = buttonScrollTop.style.top;
+//     console.log("top: ", top);
+//     buttonScrollTop.style.top = buttonScrollTop.style.left;
+//     buttonScrollTop.style.left = temp;
+//   }
+// };
+
+// const windowObsOptions = { root: null, threshold: 0 };
+
+// const windowObserver = new IntersectionObserver(
+//   windowObsCallback,
+//   windowObsOptions
+// );
+
+// windowObserver.observe(window);
 // Przyciski nawigacji
 
 document.querySelector(".nav-links").addEventListener("click", function (e) {
@@ -81,7 +103,7 @@ const opacityHnadler = function (e, opacity) {
 
 // Mouse over
 navigation.addEventListener("mouseover", function (e) {
-  opacityHnadler(e, 0.5);
+  opacityHnadler(e, 0.35);
 });
 
 // Mouse out
