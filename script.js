@@ -17,13 +17,14 @@ const headerObsCallback = function (entries, observer) {
   if (!entry.isIntersecting) {
     navigation.classList.add("sticky");
 
-    buttonScrollTop.style.opacity = 1;
+    if (buttonScrollTop.classList.contains("display-none")) {
+      buttonScrollTop.classList.remove("display-none");
+    }
 
     // dodać wyświetlanie się buttona
   } else {
     navigation.classList.remove("sticky");
-
-    buttonScrollTop.style.opacity = 0;
+    buttonScrollTop.classList.add("display-none");
 
     // usuwanie buttona
   }
