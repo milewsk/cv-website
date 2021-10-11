@@ -125,6 +125,40 @@ window.addEventListener("resize", () => {
   document.documentElement.style.setProperty("--vw", `${vw}px`);
 });
 
+// FOOTER
+
+// Icons in footer
+const footerIcons = document.querySelector(".footer-icons");
+
+const footerOpacityHandler = (e, opacityTarget, opacityOthers) => {
+  e.preventDefault();
+
+  // do poprawienia - lepsze oznaczenia html można tu zrobić
+  if (e.target.classList.contains("footer-img")) {
+    const link = e.target;
+
+    const siblings = link
+      .closest(".footer-icons")
+      .querySelectorAll(".footer-img");
+
+    siblings.forEach((element) => {
+      if (element != link) {
+        element.style.opacity = opacityOthers;
+      } else if (element === link) {
+        element.style.opacity = opacityTarget;
+      }
+    });
+  }
+};
+
+footerIcons.addEventListener("mouseover", function (e) {
+  footerOpacityHandler(e, 1, 0.4);
+});
+
+footerIcons.addEventListener("mouseout", function (e) {
+  footerOpacityHandler(e, 0.8, 0.8);
+});
+
 // button Scroll up
 
 buttonScrollTop.addEventListener("click", () => {
