@@ -5,6 +5,9 @@
 const header = document.querySelector("header");
 const navigation = document.querySelector(".nav");
 
+// pobranie wysokości navigacji do efektu przejścia
+let navHeight = navigation.offsetHeight;
+
 const buttonScrollTop = document.querySelector(".scroll-up--button");
 
 // STICKY NAV
@@ -33,7 +36,7 @@ const headerObsCallback = function (entries, observer) {
 const headerObsOptions = {
   root: null,
   threshold: 0,
-  rootMargin: "-76.13px",
+  rootMargin: `-${navHeight}px`,
 };
 
 const headerObserver = new IntersectionObserver(
@@ -123,6 +126,43 @@ window.addEventListener("resize", () => {
 
   let vw = window.innerWidth * 0.01;
   document.documentElement.style.setProperty("--vw", `${vw}px`);
+
+  navHeight = nav.offsetHeight;
+  console.log(navHeight);
+});
+
+// SECTION
+
+const allSections = document.querySelectorAll(".section");
+
+const sectionRevealCallback = function (entries, observer) {
+  const [entry] = entries;
+
+  if (!entry.isIntersecting) {
+    return;
+  }
+
+  console.log(entry);
+  console.log(entry.target);
+
+  entry.target.classList.remove("section-hidden");
+  observer.unobserve(entry.target);
+};
+
+const sectionRevealOptions = {
+  root: null,
+  threshold: 0.15,
+};
+
+const sectionObserver = new IntersectionObserver(
+  sectionRevealCallback,
+  sectionRevealOptions
+);
+
+// dodaj ukrycie dla każdej sekcji i zacznij ją obserwować
+allSections.forEach((section) => {
+  section.classList.add("section-hidden");
+  sectionObserver.observe(section);
 });
 
 // FOOTER
