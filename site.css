@@ -27,12 +27,19 @@ body {
 /* MOBILE FIRST */
 
 .page {
-  width: calc(var(--vw, 1vw) * 100);
+  /* width: calc(var(--vw, 1vw) * 100); */
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   background-color: rgba(44, 39, 39, 0.816);
   flex: 1 1 auto;
+
+  transition: all 1s;
+}
+
+.page-hidden {
+  opacity: 0;
+  /* transform: translateY(8rem); */
 }
 
 header {

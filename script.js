@@ -5,10 +5,20 @@
 const header = document.querySelector("header");
 const navigation = document.querySelector(".nav");
 
+const page = document.querySelector(".page");
+
 // pobranie wysokości navigacji do efektu przejścia
 let navHeight = navigation.offsetHeight;
 
 const buttonScrollTop = document.querySelector(".scroll-up--button");
+
+// Slow mode for window
+
+function displayPage() {
+  page.classList.remove("page-hidden");
+}
+
+displayPage();
 
 // STICKY NAV
 
