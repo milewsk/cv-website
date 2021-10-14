@@ -39,7 +39,7 @@ body {
 
 .page-hidden {
   opacity: 0;
-  /* transform: translateY(8rem); */
+  transform: translateY(2rem);
 }
 
 header {
@@ -49,6 +49,13 @@ header {
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
+
+  transition: all 2.5s;
+}
+
+.header-hidden {
+  opacity: 0;
+  /* transform: translateY(-8rem); */
 }
 
 .header {

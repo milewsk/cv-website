@@ -15,7 +15,7 @@ const buttonScrollTop = document.querySelector(".scroll-up--button");
 // Slow mode for window
 
 function displayPage() {
-  page.classList.remove("page-hidden");
+  header.classList.remove("header-hidden");
 }
 
 displayPage();
