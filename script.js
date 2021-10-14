@@ -91,7 +91,7 @@ document.querySelector(".nav-links").addEventListener("click", function (e) {
     // const offsetTop = document.querySelector(`.${id}`).offsetTop;
 
     // scrollTo({ top: offsetTop, behavior: "smooth" });
-    document.querySelector(`.${id}`).scrollIntoView(true);
+    document.querySelector(`#${id}`).scrollIntoView(true);
   }
 });
 
@@ -130,6 +130,7 @@ navigation.addEventListener("mouseout", function (e) {
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty("--vh", `${vh}px`);
 
+// Resize
 window.addEventListener("resize", () => {
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
@@ -137,9 +138,16 @@ window.addEventListener("resize", () => {
   let vw = window.innerWidth * 0.01;
   document.documentElement.style.setProperty("--vw", `${vw}px`);
 
-  navHeight = nav.offsetHeight;
+  navHeight = navigation.offsetHeight;
   console.log(navHeight);
 });
+
+// Functions for resize
+
+const changeFooter = function (winodwW, windowH) {
+  if (windowH < winodwW) {
+  }
+};
 
 // SECTION
 
