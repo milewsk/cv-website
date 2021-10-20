@@ -232,8 +232,6 @@ function contactChangeColor(e, color) {
   e.preventDefault();
   console.log(e.target.classList);
   if (e.target.classList.contains("contact-img")) {
-    console.log(e.target.classList[1]);
-    console.log(e.target.children);
     if (color === 1) {
       let newColor = e.target.classList[1].trim();
       e.target.style.backgroundColor = `var(--${newColor}-color)`;
