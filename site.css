@@ -1,10 +1,18 @@
 :root {
   --bg-color: rgba(44, 39, 39, 0.816);
+  --bg-color-full: rgba(44, 39, 39, 1);
 
   --color-primary-nav: rgb(64, 56, 56);
   --color-primary-nav-D: rgba(44, 39, 39, 0.911);
 
+  --email-icon-color: #d44638;
+  --linkedin-icon-color: rgba(0, 119, 181, 1);
+  --github-icon-color: rgba(207, 124, 252, 1);
+
   --color-font-white: whitesmoke;
+
+  --animation: none;
+  --animation-color: #333;
 }
 
 * {
@@ -178,6 +186,7 @@ header {
 .section-header {
   display: flex;
   flex-direction: column;
+  padding: 2rem 0;
 
   flex: 1 1 auto;
 }
@@ -198,7 +207,7 @@ header {
 
 .section-under_title {
   padding: 0.5rem 0.3rem;
-  font-size: 30%;
+  font-size: 40%;
 }
 
 /* photo?? */
@@ -251,6 +260,14 @@ i {
 
 /* CONTACT */
 
+#section-4 h3 {
+  text-align: center;
+}
+
+#section-4 h5 {
+  text-align: center;
+}
+
 .contact-container {
   width: 100%;
 
@@ -263,11 +280,11 @@ i {
   width: 30%;
   height: 8rem;
 
-  /* box-shadow: 2px 0 3px black; */
+  box-shadow: 2px 0 3px var(--bg-color-full);
   border-radius: 18px;
 
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -277,8 +294,44 @@ i {
   height: 100%;
 }
 
-.contact-item img {
+.contact-item > a img {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex: 1 1 auto;
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  padding: 4% 4%;
+
   opacity: 1;
+  transition: all 0.7s;
+}
+
+.contact-item > a img ::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  border-radius: inherit;
+  transition: scale(1.6);
+  background-color: var(--animation-color);
+  animation: var(--animation);
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0) scale(1.6);
+  }
+  50% {
+    transform: translateY(-150%), rotate(500deg), scale(1.6);
+  }
+  100% {
+    transform: translateY(0) rotate(0) scale(1.6);
+  }
 }
 
 /* FOOTER */
@@ -365,6 +418,7 @@ i {
 .icon-contact {
   height: 7vh;
   width: 7vh;
+  padding: auto;
   background-color: var(--color-primary-nav-D);
   border-style: none;
   opacity: 0.75;

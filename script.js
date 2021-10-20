@@ -223,3 +223,32 @@ buttonScrollTop.addEventListener("click", () => {
   console.log("hi");
   document.querySelector("header").scrollIntoView(true);
 });
+
+// Changing colors
+
+const contactContainer = document.querySelector(".contact-container");
+
+function contactChangeColor(e, color) {
+  e.preventDefault();
+  console.log(e.target.classList);
+  if (e.target.classList.contains("contact-img")) {
+    console.log(e.target.classList[1]);
+    console.log(e.target.children);
+    if (color === 1) {
+      let newColor = e.target.classList[1].trim();
+      e.target.style.backgroundColor = `var(--${newColor}-color)`;
+    } else if (color === 0) {
+      e.target.style.backgroundColor = `var(--color-primary-nav)`;
+    }
+  }
+}
+
+// możemy dodać po prostu clasę która będzie pusta/identyczna co klasa obok tylko z efektem after/before
+// można to zrobić w dwie strony na dodaniu i na usunięciu (dodać inna klasę z odwróconym kolorem)
+
+contactContainer.addEventListener("mouseover", function (e) {
+  contactChangeColor(e, 1);
+});
+contactContainer.addEventListener("mouseout", function (e) {
+  contactChangeColor(e, 0);
+});
