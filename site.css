@@ -214,6 +214,18 @@ header {
   font-size: 40%;
 }
 
+.section-content {
+  padding: 1rem;
+}
+
+.section-content p {
+  text-align: center;
+  color: whitesmoke;
+  padding: 0.5rem 0;
+  font-size: 85%;
+  font-family: inherit;
+  font-weight: 450;
+}
 /* photo?? */
 
 .photo-konrad {
@@ -225,20 +237,49 @@ header {
   justify-content: center;
 }
 
-.circle {
-  width: 60%;
-  height: 100%;
-  border-radius: 140%;
-  background-color: yellowgreen;
-}
-
 .my-img {
   display: flex;
-  width: 100%;
+  width: 65%;
   height: 100%;
-  border-radius: inherit;
-
+  border-radius: 140%;
   box-shadow: 0 0 5px var(--bg-color-full);
+}
+
+/* SLIDER */
+.slider {
+  padding: 3rem 0 2rem 0;
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+}
+
+.slide-title {
+  font-size: 70%;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.slide-sec-title {
+  font-size: 50%;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.slide-description {
+  font-size: 40%;
+  text-align: left;
+  padding: 0.3rem 1rem 0.3rem 0rem;
+}
+
+.slide-links {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.slide-link {
+  padding: 0 0.5rem;
 }
 
 /* scroll up button */
