@@ -91,7 +91,7 @@ document.querySelector(".nav-links").addEventListener("click", function (e) {
     // const offsetTop = document.querySelector(`.${id}`).offsetTop;
 
     // scrollTo({ top: offsetTop, behavior: "smooth" });
-    document.querySelector(`#${id}`).scrollIntoView(true);
+    document.querySelector(`#${id}`).scrollIntoView({ block: "end" });
   }
 });
 
@@ -130,6 +130,9 @@ navigation.addEventListener("mouseout", function (e) {
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty("--vh", `${vh}px`);
 
+console.log(navHeight);
+document.documentElement.style.setProperty("--vNav", `${navHeight}px`);
+
 // Resize
 window.addEventListener("resize", () => {
   let vh = window.innerHeight * 0.01;
@@ -139,6 +142,9 @@ window.addEventListener("resize", () => {
   document.documentElement.style.setProperty("--vw", `${vw}px`);
 
   navHeight = navigation.offsetHeight;
+
+  document.documentElement.style.setProperty("--vhNav", `${navHeight}px`);
+
   console.log(navHeight);
 });
 
@@ -223,6 +229,8 @@ buttonScrollTop.addEventListener("click", () => {
   console.log("hi");
   document.querySelector("header").scrollIntoView(true);
 });
+
+// CONTACT
 
 // Changing colors
 
