@@ -91,7 +91,7 @@ document.querySelector(".nav-links").addEventListener("click", function (e) {
     // const offsetTop = document.querySelector(`.${id}`).offsetTop;
 
     // scrollTo({ top: offsetTop, behavior: "smooth" });
-    document.querySelector(`#${id}`).scrollIntoView({ block: "end" });
+    document.querySelector(`#${id}`).scrollIntoView(true);
   }
 });
 
