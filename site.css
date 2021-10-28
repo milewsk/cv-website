@@ -317,8 +317,8 @@ header {
 }
 
 .slide-img {
-  height: 5vh;
-  width: 5vh;
+  height: 4vh;
+  width: 4vh;
   padding: auto;
   border-style: none;
   opacity: 0.6;
@@ -332,11 +332,12 @@ header {
 
 .slider-btn {
   position: absolute;
-  top: 50%;
+  left: 50%;
   z-index: 10;
 
   border: none;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: inherit;
+  /* background-color: rgba(255, 255, 255, 0.1); */
   font-family: inherit;
   color: #333;
 
@@ -347,17 +348,18 @@ header {
   font-size: 1.2rem;
   font-weight: bold;
   cursor: pointer;
+  opacity: 1;
 
   padding-bottom: 0.4rem;
 }
 
-.slider-btn-left {
-  left: 5%;
+.slider-btn-up {
+  top: 6%;
   transform: translate(-50%, -50%);
 }
 
-.slider-btn-right {
-  right: -3%;
+.slider-btn-down {
+  bottom: -5%;
   transform: translate(-50%, -50%);
 }
 

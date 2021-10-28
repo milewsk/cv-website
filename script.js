@@ -91,7 +91,9 @@ document.querySelector(".nav-links").addEventListener("click", function (e) {
     // const offsetTop = document.querySelector(`.${id}`).offsetTop;
 
     // scrollTo({ top: offsetTop, behavior: "smooth" });
-    document.querySelector(`#${id}`).scrollIntoView(true);
+    document
+      .querySelector(`#${id}`)
+      .scrollIntoView({ behavior: "smooth", block: "end" });
   }
 });
 
@@ -257,4 +259,38 @@ contactContainer.addEventListener("mouseover", function (e) {
 });
 contactContainer.addEventListener("mouseout", function (e) {
   contactChangeColor(e, 0);
+});
+
+// SLIDER
+
+const slides = document.querySelectorAll(".slide");
+const btnUp = document.querySelector(".slider-btn-up");
+const btnDown = document.querySelector(".slider-btn-down");
+
+// translate Y plusowa wartość -> przesunięcie w dół
+//  wartośćminus -> ku górze
+
+slides.forEach((slide, i) => {
+  slide.style.transform = `translateY(${100 * i}%)`;
+});
+
+let currentSlide = 0;
+const slidesLength = slides.length;
+
+btnDown.addEventListener("click", function (e) {
+  if (currentSlide <= slidesLength - 1) {
+    currentSlide++;
+    slides.forEach((slide, i) => {
+      slide.style.transform = `translateY(${100 * (i - currentSlide)}%)`;
+    });
+  }
+});
+
+btnUp.addEventListener("click", function (e) {
+  if (currentSlide > 0) {
+    currentSlide--;
+    slides.forEach((slide, i) => {
+      slide.style.transform = `translateY(${100 * (i - currentSlide)}%)`;
+    });
+  }
 });
