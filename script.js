@@ -278,7 +278,7 @@ let currentSlide = 0;
 const slidesLength = slides.length;
 
 btnDown.addEventListener("click", function (e) {
-  if (currentSlide <= slidesLength - 1) {
+  if (currentSlide < slidesLength - 1) {
     currentSlide++;
     slides.forEach((slide, i) => {
       slide.style.transform = `translateY(${100 * (i - currentSlide)}%)`;
