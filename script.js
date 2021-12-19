@@ -4,24 +4,19 @@
 
 const header = document.querySelector("header");
 const navigation = document.querySelector(".nav");
-
 const page = document.querySelector(".page");
 
 // pobranie wysokości navigacji do efektu przejścia
 let navHeight = navigation.offsetHeight;
-
 const buttonScrollTop = document.querySelector(".scroll-up--button");
 
 // Slow mode for window
-
 function displayPage() {
   header.classList.remove("header-hidden");
 }
-
 displayPage();
 
 // STICKY NAV
-
 const headerObsCallback = function (entries, observer) {
   const entry = entries[0];
   console.log(entry);
@@ -82,12 +77,9 @@ headerObserver.observe(header);
 
 document.querySelector(".nav-links").addEventListener("click", function (e) {
   e.preventDefault();
-
-  console.log(e.target);
-
   if (e.target.classList.contains("nav-link")) {
     const id = e.target.getAttribute("href");
-
+    console.log(id);
     // const offsetTop = document.querySelector(`.${id}`).offsetTop;
 
     // scrollTo({ top: offsetTop, behavior: "smooth" });

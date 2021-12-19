@@ -67,6 +67,8 @@ main {
   width: 100%;
 }
 
+/* HEADER */
+
 header {
   height: calc(var(--vh, 1vh) * 100);
   display: flex;
@@ -94,10 +96,12 @@ header {
 .header-box {
 }
 
+/* Navigation */
+
 .nav {
   background-color: var(--color-primary-nav);
   width: 100%;
-  height: 12%;
+  height: 12vh;
   display: flex;
   flex: 1 1 auto;
   justify-content: center;
@@ -141,19 +145,20 @@ header {
 .nav-link:visited {
   padding: 1rem;
   color: whitesmoke;
+  font-family: "Lato";
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   text-decoration: none;
 
   transition: all 0.4s;
 }
 
-/* section */
+/* Section */
 
 .section {
   width: 100%;
   height: calc((calc(var(--vh, 1vh) * 100) - calc(var(--vh, 1vh) * 12)));
-  padding: 15% 7% 5% 7%;
+  padding: 10% 7% 5% 7%;
   /* margin: calc(var(--vNav, 1vh)) 0 0 0; */
   transition: all 0.8s;
   display: flex;
@@ -164,20 +169,6 @@ header {
   /* rozciągnięcie after */
   /* align-items: center; */
 }
-/* 
-#section-1 {
-  display: grid;
-  grid-template-columns:
-    [line1] 10% [line2] 20% [line3] auto
-    [line4] 20% [line5] 10% [line6];
-  grid-template-rows: [row1-start] 20% [row1-end row2-start] 10% [row2-end row3-start] 30%[row3-end row4-start] 40% [row4-end];
-
-  grid-template-areas:
-    "header header header header header"
-    "side-header side-header side-header side-header side-header"
-    ". . photo photo photo"
-    ". content content content .";
-} */
 
 .section-hidden {
   opacity: 0;
@@ -214,7 +205,7 @@ header {
 
 .section-under_title {
   padding: 0.4rem 0.3rem;
-  font-size: 40%;
+  font-size: 50%;
 }
 
 .section-content {
@@ -223,19 +214,21 @@ header {
 
 .section-content p {
   text-align: center;
-  color: rgba(245, 245, 245, 0.762);
+  color: rgba(245, 245, 245, 0.844);
   padding: 0.3rem 0;
-  font-size: 100%;
+  line-height: 1.5;
+  font-size: 110%;
   font-family: inherit;
   font-weight: bold;
 }
-/* photo?? */
 
+/* photo?? */
 .photo-konrad {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0.3rem 0;
 }
 
 .my-img {
@@ -246,22 +239,56 @@ header {
   box-shadow: 0 0 5px var(--bg-color-full);
 }
 
+/* SECTION 2 */
+#section-2 .section-header {
+  padding-bottom: 0;
+}
+h6 {
+  text-align: center;
+  font-size: 110%;
+  color: rgba(245, 245, 245, 1);
+  padding: 0.1rem 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0.4rem 0;
+  list-style: none;
+  font-family: "Lato";
+  font-weight: 400;
+  line-height: 1.2;
+
+  text-align: center;
+}
+
+li {
+  font-family: inherit;
+  font-size: 90%;
+  color: rgba(245, 245, 245, 0.844);
+  padding: 0.3rem 0;
+}
+
 /* SLIDER */
+#section-3 > .section-header {
+  margin-bottom: 2rem;
+}
+
 .slider {
   position: relative;
   width: 100%;
   height: 40vh;
-  padding: 2rem 0 2rem 0;
+  /* padding: 1rem 0 1rem 0; */
 
   overflow: hidden;
 }
 
 .slide {
   position: absolute;
-  top: 30%;
+  top: 10%;
   left: 12%;
   width: 75%;
-  height: 80%;
+  height: 40vh;
+  padding: 5vh 0 5vh 0;
 
   display: flex;
   flex-direction: column;
@@ -270,21 +297,21 @@ header {
 }
 
 .slide-title {
-  font-size: 100%;
+  font-size: 130%;
   white-space: nowrap;
   text-align: center;
 }
 
 .slide-sec-title {
   color: rgba(0, 0, 0, 0.7);
-  font-size: 90%;
+  font-size: 105%;
   white-space: nowrap;
   text-align: center;
 }
 
 .slide-description {
   color: rgba(0, 0, 0, 0.7);
-  font-size: 75%;
+  font-size: 95%;
   text-align: center;
   font-weight: 600;
   padding: 0.3rem 0rem 0.3rem 0rem;
@@ -315,8 +342,8 @@ header {
 }
 
 .slide-img {
-  height: 4vh;
-  width: 4vh;
+  height: 5vh;
+  width: 5vh;
   padding: auto;
   border-style: none;
   opacity: 0.6;
@@ -345,7 +372,7 @@ header {
   width: 5vh;
 
   font-size: 1.2rem;
-  font-weight: 800;
+  font-weight: 1000;
   cursor: pointer;
   opacity: 1;
 
@@ -353,7 +380,7 @@ header {
 }
 
 .slider-btn-up {
-  top: 7%;
+  top: 11%;
   transform: translate(-50%, -50%);
 }
 
