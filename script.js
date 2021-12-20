@@ -95,12 +95,10 @@ const opacityHnadler = function (e, opacity) {
   // sprawdzenie czy jest to nasz link
   if (e.target.classList.contains("nav-link")) {
     e.preventDefault();
-
     const link = e.target;
     const siblings = link.closest(".nav").querySelectorAll(".nav-link");
 
     // dla każdego elementu innego niż element nasłuchiwany wykonaj przysłonę
-
     siblings.forEach((element) => {
       if (link !== element) {
         element.style.opacity = opacity;
